@@ -20,14 +20,10 @@ class StationsSeeder extends Seeder
 
         foreach ($cities as $city) {
             // Create the station with the current city
-            $station = Station::create([
+             Station::create([
                 'name' => $city,
             ]);
         }
-        $stations = Station::all();
-        foreach ($stations as $index => $station) {
-            $nextIndex = $index + 1;
-            $station->update(['next_to_id' => $nextIndex < count($stations) ? $stations[$nextIndex]->id : null]);
-        }
+
     }
 }

@@ -13,7 +13,7 @@ class BusesSeeder extends Seeder
      */
     public function run(): void
     {
-        Bus::updateOrCreate(['name' => 'Bus A']);
-        Bus::updateOrCreate(['name' => 'Bus B']);
+        Bus::updateOrCreate(['plate_number' => '123']);
+        Bus::updateOrCreate(['plate_number' => '456']);
     }
 }

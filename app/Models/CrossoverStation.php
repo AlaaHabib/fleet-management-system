@@ -12,15 +12,9 @@ class CrossoverStation extends Model
 
     protected $fillable = ['from_station_id', 'to_station_id', 'trip_id'];
 
-
     public function trip()
     {
 
         return $this->belongsTo(Trip::class);
-    }
-    public function seats()
-    {
-
-        return $this->hasMany(Seat::class);
     }
 }

@@ -23,6 +23,9 @@ return new class extends Migration
             $table->foreign('bus_id')->references('id')->on('buses')->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
+
+            $table->index(['from_station_id', 'to_station_id', 'bus_id']);
+
         });
     }
 

@@ -17,12 +17,12 @@ class SeatsSeeder extends Seeder
      */
     public function run(): void
     {
-        $crossoverStations = CrossoverStation::all();
+        $buses = Bus::all();
 
-        foreach ($crossoverStations as $crossoverStation) {
+        foreach ($buses as $bus) {
             for ($i = 1; $i <= 12; $i++) {
                 Seat::updateOrCreate([
-                    'crossover_station_id' => $crossoverStation->id,
+                    'bus_id' => $bus->id,
                     'seat_number' => 'Seat ' . $i,
                 ]);
             }

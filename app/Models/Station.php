@@ -10,10 +10,7 @@ class Station extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = ['name', 'next_to_id'];
+    protected $fillable = ['name'];
 
-    public function nextStation()
-    {
-        return $this->belongsTo(Station::class, 'next_to_id');
-    }
+    
 }

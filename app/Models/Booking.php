@@ -12,7 +12,10 @@ class Booking extends Model
 
     protected $fillable = [
         'user_id',
-        'seat_id', 
+        'seat_id',
+        'trip_id',
+        'from_station_id',
+        'to_station_id',
     ];
 
     public function user()
@@ -23,5 +26,20 @@ class Booking extends Model
     public function seat()
     {
         return $this->belongsTo(Seat::class);
+    }
+
+    public function trip()
+    {
+        return $this->belongsTo(Trip::class);
+    }
+
+    public function fromStation()
+    {
+        return $this->belongsTo(Station::class, 'from_station_id');
+    }
+
+    public function toStation()
+    {
+        return $this->belongsTo(Station::class, 'to_station_id');
     }
 }

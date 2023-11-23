@@ -14,8 +14,6 @@ return new class extends Migration
         Schema::create('stations', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();
-            $table->unsignedBigInteger('next_to_id')->nullable();
-            $table->foreign('next_to_id')->references('id')->on('stations');
             $table->timestamps();
             $table->softDeletes();
         });

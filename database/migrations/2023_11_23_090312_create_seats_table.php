@@ -14,10 +14,9 @@ return new class extends Migration
         Schema::create('seats', function (Blueprint $table) {
             $table->id();
             $table->string('seat_number');
-            $table->unsignedBigInteger('crossover_station_id');
-            $table->boolean('is_booked')->default(false);
+            $table->unsignedBigInteger('bus_id');
 
-            $table->foreign('crossover_station_id')->references('id')->on('crossover_stations')->onDelete('cascade');
+            $table->foreign('bus_id')->references('id')->on('buses')->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
         });

@@ -10,12 +10,12 @@ class Seat extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = ['seat_number', 'crossover_station_id', 'is_booked'];
+    protected $fillable = ['seat_number', 'bus_id', 'is_booked'];
 
    
-    public function crossoverStation()
+    public function bus()
     {
-        return $this->belongsTo(CrossoverStation::class);
+        return $this->belongsTo(Bus::class);
     }
 
     public function bookings()

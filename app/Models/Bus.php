@@ -10,7 +10,7 @@ class Bus extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = ['name'];
+    protected $fillable = ['plate_number'];
 
     public function trips()
     {
