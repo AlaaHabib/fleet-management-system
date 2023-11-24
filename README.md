@@ -23,7 +23,7 @@ Ensure the following are installed on your system:
 - Clone the repo ```https://github.com/AlaaHabib/fleet-management-system.git```
 - ```cd fleet-management-system```
 - Install composer packages ```composer install```
-- copy .env.copy to .env ```cp .env.copy .env```
+- copy .env.example to .env ```cp .env.example .env```
 - Add database creditionals in .env
 - ``` php artisan key:generate ```
 - Create schema for mysql database with same name in .env 
