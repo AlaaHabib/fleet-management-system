@@ -7,6 +7,7 @@ use App\Http\Requests\BookingRequest;
 use App\Http\Requests\RecordTripRequest;
 use App\Http\Resources\TripResource;
 use App\Http\Responses\Response;
+use App\Models\Station;
 use App\Repositories\BookingRepositoryEloquent;
 use App\Repositories\TripRepositoryEloquent;
 use Illuminate\Http\Request;
@@ -124,9 +125,14 @@ class TripController extends Controller
     public function index(Request $request)
     {
         $limit = $request->query('limit', null);
-        $start_station = $request->query('start_station');
-        $end_station = $request->query('end_station');
-
+        $start_station =  $request->query('start_station');
+        $end_station =  $request->query('end_station');
+        if (Station::where('id', $start_station)->first() == null || Station::where('name', $end_station)->first() == null)
+            return Response::create()
+                ->setStatusCode(ResponseStatus::HTTP_NOT_FOUND)
+                ->setMessage(__(FleetManagementConstants::RESPONSE_CODES_MESSAGES[FleetManagementConstants::TRIP_2002]))
+                ->setResponseCode(FleetManagementConstants::TRIP_2002)
+                ->failure();
         $query = $this->tripRepository;
 
         $query = $query->searchByStartEndStation($start_station, $end_station);

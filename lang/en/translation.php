@@ -7,6 +7,7 @@ return [
     'logout' => "Successfully logged out",
 
     "listRetrieved" => "List Has Been Retrieved Successfully.",
+    "notFound" => "This station does not exist",
 
     "bookingSuccessfully" => "A seat Has Been Booked Successfully.",
 ];

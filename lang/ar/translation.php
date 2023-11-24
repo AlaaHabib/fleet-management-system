@@ -9,6 +9,7 @@ return [
     "logout" => "تم تسجيل الخروج بنجاح",
 
     "listRetrieved" => "تم استرداد القائمة بنجاح.",
+    "notFound" => "هذه المحطة غير موجوده",
 
     "bookingSuccessfully" => "تم حجز المقعد بنجاح",
 
